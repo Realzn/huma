@@ -10,8 +10,23 @@ export async function POST(req: NextRequest) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     )
     const { content } = await req.json()
-    if (!content?.trim()) return NextResponse.json({ error: 'Vide' }, { status: 400 })
-
+    if (!content?.trim()) {
+      return NextResponse.json({ error: 'Vide' }, { status: 400 })
+    }
     await supabase.from('fragments').insert({
       content,
       domain: 'INCONNU',
+      label: content.split(' ').slice(0, 2).join(' '),
+      essence: content.slice(0, 60),
+      richness: 0.5,
+    })
+    return NextResponse.json({
+      domain: 'INCONNU',
+      fragments: ["J'absorbe...", "Je sens quelque chose naitre."],
+      essence: content.slice(0, 60),
+      richness: 0.5,
+    })
+  } catch (err) {
+    return NextResponse.json({ error: 'Erreur' }, { status: 500 })
+  }
+}
