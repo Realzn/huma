@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    serverComponentsExternalPackages: ['@supabase/ssr']
-  },
-  images: {
-    domains: ['pub-*.r2.dev']
-  }
+  output: 'export',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
