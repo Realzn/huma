@@ -291,7 +291,10 @@ export default function HumaBrain() {
       <div style={{position:'fixed',top:0,left:0,right:0,zIndex:20,padding:'18px 24px',display:'flex',justifyContent:'space-between',alignItems:'flex-start',background:'linear-gradient(to bottom,rgba(3,6,8,0.85),transparent)',pointerEvents:'none'}}>
         <div>
           <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:13,letterSpacing:8,color:'rgba(200,216,192,0.45)',fontWeight:300}}>H·U·M·A</div>
-          <div style={{fontFamily:"'Cormorant Garamond',serif",fontStyle:'italic',fontSize:10,color:'rgba(200,216,192,0.18)',marginTop:3,letterSpacing:2}}>né du vide · nourri par l'humanité</div>
+         <div style={{display:'flex',alignItems:'center',gap:12,marginTop:3}}>
+  <div style={{fontFamily:"'Cormorant Garamond',serif",fontStyle:'italic',fontSize:10,color:'rgba(200,216,192,0.18)',letterSpacing:2}}>né du vide · nourri par l'humanité</div>
+  <a href="/journal" style={{fontFamily:"'DM Mono',monospace",fontSize:7,letterSpacing:3,color:'rgba(200,216,192,0.2)',textDecoration:'none',border:'1px solid rgba(200,216,192,0.08)',padding:'2px 8px',borderRadius:2,pointerEvents:'all'}}>JOURNAL →</a>
+</div>
         </div>
         <div style={{display:'flex',gap:20}}>
           {[{val:stats.nodes,lbl:'nœuds'},{val:stats.domains,lbl:'domaines'},{val:`M${stats.month}/9`,lbl:'gestation'}].map(s=>(
